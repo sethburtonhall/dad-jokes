@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       isDarkMode: false,
-      isMarquee: true,
+      isMarquee: false,
       heading: 'Dad Jokes!!',
       subHeading: 'In celebration of all the hard joking dads out there. Happy Father\'s Day!! 🎉',
       searchTerm: '',
@@ -97,8 +97,12 @@ export default {
       <span v-if="isMarquee" class="h-full p-1 pl-2 pr-24 text-4xl bg-gradient-to-r from-purple-600 via-purple-600">
         <span class="absolute">🙄</span>
         <span class="absolute inline-block toggle-marquee">🤣</span>
-        </span>
-      <span v-if="!isMarquee" class="h-full pl-2 text-4xl">🤪</span>
+      </span>
+
+      <span v-if="!isMarquee" class="h-full p-1 pl-2 pr-24 text-4xl ">
+        <span class="absolute">🤪</span>
+        <span class="absolute inline-block toggle-marquee flip">🤪</span>
+      </span>
     </div>
 
     <!-- Toggle Dark Mode -->

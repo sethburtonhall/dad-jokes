@@ -21,7 +21,7 @@ export default {
       <h1 class="text-white dark:text-gray-900 header">Dad Jokes in the Wild (West)! 🤠</h1>
       <span class="text-white cursor-pointer" @click="toggleFirePit">Warm up with a <span class="text-3xl">🔥</span></span>
       <div v-if="isFirePit" class="fixed top-0 bottom-0 left-0 right-0 z-10 w-full h-full bg-gray-900 bg-opacity-75 cursor-pointer overlay" @click="toggleFirePit">
-        <div class="absolute transform -translate-x-1/2 -translate-y-1/2 select-none test top-1/2 left-1/2">
+        <div class="absolute transform -translate-x-1/2 -translate-y-1/2 select-none fire-gif test top-1/2 left-1/2">
           <img src="../assets/fire.gif" alt="FirePit Gif">
           <p class="mt-2 text-xl text-center text-white">I slept like a log last night and woke up in the firepit.</p>
         </div>

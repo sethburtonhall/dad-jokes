@@ -64,7 +64,7 @@ img {
   }
 
   50% {
-    opacity: 0;
+    opacity: 1;
   }
 
   60% {
@@ -87,9 +87,18 @@ img {
     opacity: 0;
   }
 }
+.flip {
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+}
 
 .marquee,
 .marquee-inner,
 .toggle-marquee .toggle-dark-mode {
   height: 56px;
+}
+
+.fire-gif img {
+  width: 640px;
+  height: 338px;
 }
