@@ -3,7 +3,93 @@
 @tailwind utilities;
 
 #app {
-  @apply font-sans;
-  @apply antialiased;
-  @apply grayscale;
+  @apply font-sans antialiased grayscale font-bold;
+}
+
+a {
+  @apply text-blue-500;
+}
+
+img {
+  @apply rounded-md;
+}
+
+.marquee {
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+}
+
+.marquee-inner {
+  width: fit-content;
+  transform: translate3d(var(--move-initial), 0, 0);
+  animation: marquee 25s linear infinite;
+  animation-play-state: running;
+}
+
+.marquee-inner.pause {
+  animation: none;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+}
+
+.toggle-marquee {
+  opacity: 0;
+  animation: wiggle 3s cubic-bezier(.36,.07,.19,.97) infinite
+}
+
+@keyframes wiggle {
+  10%{
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.marquee,
+.marquee-inner,
+.toggle-marquee .toggle-dark-mode {
+  height: 56px;
 }
