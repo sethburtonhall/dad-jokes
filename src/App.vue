@@ -174,7 +174,7 @@ export default {
         <div v-if="!jokes" class="flex justify-center text-xl text-gray-900 lg:text-3xl">Loading Joke...</div>
         <div v-else>
           <div v-for="joke in jokes" :key="joke.id" class="flex flex-col items-center text-xl text-center text-gray-200 dark:text-gray-900 lg:text-3xl">
-            <h1>{{joke.setup}}</h1>
+            <h2>{{joke.setup}}</h2>
             <br>
             <h3>{{joke.punchline}}</h3>
           </div>

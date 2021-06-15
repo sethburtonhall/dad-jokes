@@ -16,6 +16,7 @@ export default {
 </script>
 
 <template>
+  <!-- In the Wild -->
   <div class="px-6 py-12 bg-gray-900 lg:p-24 dark:bg-gray-200">
     <div class="flex items-center justify-between w-full">
       <h1 class="text-white dark:text-gray-900 header">Dad Jokes in the Wild (West)! 🤠</h1>
@@ -31,7 +32,7 @@ export default {
       <div class="md:w-1/3">
         <img src="../assets/farside1.jpg" alt="Far Side Image">
         <p class="text-white dark:text-gray-900">credit:
-          <a href="https://www.thefarside.com/" target="_blank">
+          <a href="https://www.thefarside.com/" target="_blank" rel="noopener">
             The Far Side
           </a>
         </p>
@@ -40,7 +41,7 @@ export default {
       <div class="md:w-1/3">
         <img src="../assets/han-leno.jpg" alt="Indian Hills Community Sign">
         <!-- <p class="text-white dark:text-gray-900">credit:
-          <a href="https://www.facebook.com/IndianHillsCommunitySign/" target="_blank">
+          <a href="https://www.facebook.com/IndianHillsCommunitySign/" target="_blank" rel="noopener">
             Indian Hills Community Sign
           </a>
         </p> -->
@@ -50,6 +51,7 @@ export default {
     </div>
   </div>
 
+  <!-- Hall of Shame -->
   <div class="px-6 py-12 bg-blue-500 lg:p-24">
     <h1 class="header">Dad Jokes Hall of Shame! 🙄</h1>
     <div class="flex flex-col justify-between space-y-4 md:flex-row md:space-y-0 md:space-x-4 image-alt">
@@ -63,7 +65,7 @@ export default {
         <img src="../assets/joke3.jpg" alt="Far Side Image">
       </div>
     </div>
-    <p class="text-white">credit: <a href="https://www.amazon.com/Dad-Jokes-Shame-Gifts-Worst/dp/1681887606/ref=sr_1_1?dchild=1&keywords=dad+jokes+hall+of+shame&qid=1614209765&sr=8-1" target="_blank" class="text-gray-900">Dad Jokes: Hall of Shame</a></p>
+    <p class="text-white">credit: <a href="https://www.amazon.com/Dad-Jokes-Shame-Gifts-Worst/dp/1681887606/ref=sr_1_1?dchild=1&keywords=dad+jokes+hall+of+shame&qid=1614209765&sr=8-1" target="_blank" rel="noopener" class="text-gray-900">Dad Jokes: Hall of Shame</a></p>
   </div>
 </template>
 
