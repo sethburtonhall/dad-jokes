@@ -1,5 +1,5 @@
 ## Dad Jokes!!
-### In celebration of all the hard joking dads out there. Happy Father\'s Day!! 🎉
+### In celebration of all the hard joking dads out there. Happy Father\'s Day 2021!! 🎉
 ----
 #### TechStack
 * Vue
@@ -13,5 +13,5 @@ Made with 💖 by <a href="https://twitter.com/sethburtonhall/status/14031766199
 Built with the <a href="https://dadjokes.io/" target="_blank">Dad Jokes API</a>
 
 ### Build in Public Content
-[Blog Post](https://google.com)    
-[Live Stream](https://google.com)
+[Blog Post](https://sethhallcreative.com)    
+[Live Stream](https://sethhallcreative.com)
