@@ -42,7 +42,7 @@ img {
 }
 
 .toggle-marquee {
-  opacity: 0;
+  opacity: 1;
   animation: wiggle 3s cubic-bezier(.36,.07,.19,.97) infinite
 }
 
