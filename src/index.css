@@ -43,10 +43,10 @@ img {
 
 .toggle-marquee {
   opacity: 1;
-  animation: wiggle 3s cubic-bezier(.36,.07,.19,.97) infinite
+  animation: dissolve 3s cubic-bezier(.36,.07,.19,.97) infinite
 }
 
-@keyframes wiggle {
+@keyframes dissolve {
   10%{
     opacity: 1;
   }
@@ -64,7 +64,7 @@ img {
   }
 
   50% {
-    opacity: 1;
+    opacity: 0;
   }
 
   60% {
@@ -84,9 +84,10 @@ img {
   }
 
   100% {
-    opacity: 0;
+    opacity: 1;
   }
 }
+
 .flip {
   transform: scaleX(-1);
   -webkit-transform: scaleX(-1);

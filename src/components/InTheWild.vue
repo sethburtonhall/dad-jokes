@@ -20,7 +20,7 @@ export default {
   <div class="px-6 py-12 bg-gray-900 lg:p-24 dark:bg-gray-200">
     <div class="flex items-center justify-between w-full">
       <h1 class="text-white dark:text-gray-900 header">Dad Jokes in the Wild (West)! 🤠</h1>
-      <span class="text-white cursor-pointer" @click="toggleFirePit">Warm up with a <span class="text-3xl">🔥</span></span>
+      <span class="invisible text-white cursor-pointer lg:visible" @click="toggleFirePit">Warm up with a <span class="text-3xl">🔥</span></span>
       <div v-if="isFirePit" class="fixed top-0 bottom-0 left-0 right-0 z-10 w-full h-full bg-gray-900 bg-opacity-75 cursor-pointer overlay" @click="toggleFirePit">
         <div class="absolute transform -translate-x-1/2 -translate-y-1/2 select-none fire-gif test top-1/2 left-1/2">
           <img src="../assets/fire.gif" alt="FirePit Gif">

@@ -76,7 +76,7 @@ export default {
 
     <!-- Toggle Marquee -->
     <div class="fixed left-0 w-auto py-2 text-left cursor-pointer select-none" @click="toggleMarquee">
-      <span v-if="isMarquee" class="h-full p-1 pl-2 pr-24 text-4xl bg-gradient-to-r from-purple-600 via-purple-600">
+      <span v-if="isMarquee" class="h-full p-1 pl-2 text-4xl pr-28 bg-gradient-to-r from-purple-600 via-purple-600">
         <span class="absolute">🤣</span>
         <span class="absolute inline-block toggle-marquee">🙄</span>
       </span>
@@ -89,8 +89,8 @@ export default {
 
     <!-- Toggle Dark Mode -->
     <div class="fixed right-0 w-auto py-2 text-right cursor-pointer select-none" @click="toggleDarkMode">
-      <span v-if="isDarkMode" class="p-1 pl-24 pr-2 text-4xl bg-gradient-to-l from-gray-900 via-gray-900">🌝</span>
-      <span v-if="!isDarkMode && isMarquee" class="p-1 pl-24 pr-2 text-4xl bg-gradient-to-l from-gray-900 via-gray-900">🌚</span>
+      <span v-if="isDarkMode" class="p-1 pl-24 pr-3 text-4xl bg-gradient-to-l from-gray-900 via-gray-900">🌝</span>
+      <span v-if="!isDarkMode && isMarquee" class="p-1 pl-24 pr-3 text-4xl bg-gradient-to-l from-gray-900 via-gray-900">🌚</span>
       <span v-if="!isDarkMode && !isMarquee" class="p-1 pl-24 pr-2 text-4xl ">🌚</span>
     </div>
   </div>
