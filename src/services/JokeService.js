@@ -1,22 +1,18 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: 'https://dad-jokes.p.rapidapi.com',
+  baseURL: 'https://icanhazdadjoke.com/',
   headers: {
-    'x-rapidapi-key': import.meta.env.VITE_RAPID_API_KEY,
-    'x-rapidapi-host': import.meta.env.VITE_RAPID_API_HOST,
-    "useQueryString": true,
+    'Accept': 'application/json',
+    'User-Agent': 'Dad Jokes - https://github.com/sethburtonhall/dad-jokes - https://sethhallcreative.com/'
   },
 })
 
 export default {
   getRandomJoke() {
-   return apiClient.get('/random/joke')
-  },
-  getJokeByType(type) {
-   return apiClient.get('/joke/type/' + type)
+     return apiClient.get('/')
   },
   getJokesBySearch(query) {
-   return apiClient.get('/joke/search/?term=' + query)
+   return apiClient.get('/search?term=' + query)
   }
 }

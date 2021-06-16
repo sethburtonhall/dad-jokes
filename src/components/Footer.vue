@@ -11,7 +11,7 @@ export default {
         Made with 💖 by <a href="https://twitter.com/sethburtonhall/status/1403176619972386816" target="_blank" rel="noopener">Seth Hall</a> as a part of <a href="https://virtualcoffee.io" target="_blank" rel="noopener" class="text-pink-500">VirtualCoffee's</a> <a href="https://virtualcoffee.io/monthlychallenges/june-2021/" target="_blank" rel="noopener">Monthly Challenge</a>
       </div>
       <div>Built with the
-        <a href="https://dadjokes.io/" target="_blank" rel="noopener">Dad Jokes API</a>
+        <a href="https://icanhazdadjoke.com/api" target="_blank" rel="noopener">icanhazdadjokes API</a>
       </div>
     </div>
 

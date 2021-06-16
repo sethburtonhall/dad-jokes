@@ -40,11 +40,6 @@ export default {
 
       <div class="md:w-1/3">
         <img src="../assets/han-leno.jpg" alt="Indian Hills Community Sign">
-        <!-- <p class="text-white dark:text-gray-900">credit:
-          <a href="https://www.facebook.com/IndianHillsCommunitySign/" target="_blank" rel="noopener">
-            Indian Hills Community Sign
-          </a>
-        </p> -->
       </div>
 
       <img src="../assets/west.jpg" alt="Far Side Image" class="md:w-1/3">
