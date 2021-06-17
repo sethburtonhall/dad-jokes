@@ -11,7 +11,7 @@ export default {
     return {
       isDarkMode: false,
       isMarquee: false,
-      heading: 'Dad Jokes!!',
+      heading: 'More Dad Jokes!!',
       subHeading: 'In celebration of all the hard joking dads out there. Happy Father\'s Day!! 🎉',
       searchTerm: '',
       jokes: [],
