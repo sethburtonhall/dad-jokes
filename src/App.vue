@@ -25,7 +25,7 @@ export default {
       this.jokes = jokeArray
     })
     .catch(error => {
-      console.log(error)
+      console.log(error.message)
     })
   },
   methods: {
@@ -50,7 +50,6 @@ export default {
       JokeService.getJokesBySearch(this.searchTerm.toLowerCase())
       .then(response => {
         this.jokes = [response.data.results[Math.floor(Math.random() * response.data.results.length)]];
-        // this.searchTerm = ''
       })
       .catch(error => {
         console.log(error)
@@ -114,7 +113,7 @@ export default {
           <!-- Search -->
           <div class="flex items-center w-full bg-white rounded-md shadow-xl md:w-1/2">
             <input class="w-full px-6 py-4 leading-tight text-gray-900 rounded-l-full focus:outline-none" id="search" type="text" placeholder="Search Jokes" v-model="searchTerm"/>
-              <button class="flex items-center justify-center w-12 h-12 p-2 text-2xl" @click="searchJokes">
+              <button id="search-joke" class="flex items-center justify-center w-12 h-12 p-2 text-2xl" @click="searchJokes">
                 🔍
               </button>
           </div>
@@ -122,7 +121,7 @@ export default {
           <div>or</div>
 
           <!-- Random Joke -->
-          <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700" @click="getJoke">
+          <button ref="random-joke-button" class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700" @click="getJoke">
             Get Random Joke
           </button>
         </div>
@@ -133,7 +132,7 @@ export default {
       <div class="p-8 mt-10 mb-16 bg-gray-900 rounded-md dark:bg-gray-200 lg:p-12">
         <div v-if="!jokes" class="flex justify-center text-xl text-gray-900 lg:text-3xl">Loading Joke...</div>
         <div v-else>
-          <div v-for="joke in jokes" :key="joke.id" class="flex flex-col items-center text-xl text-center text-gray-200 dark:text-gray-900 lg:text-3xl">
+          <div v-for="joke in jokes" :key="joke.id" id="joke" class="flex flex-col items-center text-xl text-center text-gray-200 dark:text-gray-900 lg:text-3xl">
             <h2>{{joke.joke}}</h2>
           </div>
         </div>
