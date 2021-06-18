@@ -5,7 +5,6 @@ import JokeService from '../../src/services/JokeService.js'
 
 const API = 'https://icanhazdadjoke.com/'
 const $t = () => { }
-const searchTerm = "job"
 
 const randomJoke = JokeService.getRandomJoke = jest.fn(() =>
   Promise.resolve({
@@ -16,15 +15,6 @@ const randomJoke = JokeService.getRandomJoke = jest.fn(() =>
     },
   })
 )
-
-// const randomJokeOnSearch = JokeService.getJokesBySearch('job') = jest.fn(() =>
-//   Promise.resolve({
-//     data: {
-//       id: 'trjG61Dlqzd',
-//       joke: "Why was Santa's little helper feeling depressed? Because he has low elf esteem.",
-//     },
-//   })
-// )
 
 describe('App.vue', () => {
   it('renders header and returns a random joke when created', async () => {
