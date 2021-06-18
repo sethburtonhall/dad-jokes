@@ -4,3 +4,4 @@ dist
 dist-ssr
 *.local
 .env
+tests/e2e/videos/app.test.js.mp4

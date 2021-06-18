@@ -1,8 +1,8 @@
 // https://docs.cypress.io/api/introduction/api.html
 
-describe("My First Test", () => {
+describe("Home page", () => {
   it("Visits the app root url", () => {
     cy.visit("/");
-    cy.contains('h1', 'This is the Home page')
+    cy.contains('h1', 'More Dad Jokes!!')
   });
 });
