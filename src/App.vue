@@ -52,7 +52,6 @@ export default {
     searchJokes() {
       JokeService.getJokesBySearch(this.searchTerm.toLowerCase())
       .then(response => {
-        console.log(response)
         if (!response.data.results.length) {
           this.joke = undefined
           this.searching = false
@@ -60,8 +59,6 @@ export default {
           this.joke = response.data.results[Math.floor(Math.random() * response.data.results.length)];
           this.searching = false
         }
-        console.log(this.joke)
-        console.log(this.searchTerm)
       })
       .catch(error => {
         alert(error)
@@ -71,7 +68,6 @@ export default {
   watch: {
     searchTerm() {
       this.searching = true
-      console.log(this.searching)
     }
   }
 }
