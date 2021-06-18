@@ -14,18 +14,22 @@ export default {
       heading: 'More Dad Jokes!!',
       subHeading: 'In celebration of all the hard joking dads out there. Happy Father\'s Day!! 🎉',
       searchTerm: '',
-      jokes: [],
+      searching: false,
+      joke: {
+        id: 'trjG61Dlqzd',
+        joke: "What's the best thing about elevator jokes? They work on so many levels.",
+        status: '200',
+      },
     }
   },
   created() {
+    this.searchTerm = ''
     JokeService.getRandomJoke()
     .then(response => {
-      const jokeArray = [];
-      jokeArray.push(response.data)
-      this.jokes = jokeArray
+      this.joke = response.data
     })
     .catch(error => {
-      console.log(error.message)
+      alert(error.message)
     })
   },
   methods: {
@@ -36,24 +40,38 @@ export default {
       this.isMarquee = !this.isMarquee
     },
     getJoke() {
+      this.searchTerm = ''
       JokeService.getRandomJoke()
       .then(response => {
-        const jokeArray = [];
-        jokeArray.push(response.data)
-        this.jokes = jokeArray
+        this.joke = response.data
       })
       .catch(error => {
-        console.log(error)
+        alert(error)
       })
     },
     searchJokes() {
       JokeService.getJokesBySearch(this.searchTerm.toLowerCase())
       .then(response => {
-        this.jokes = [response.data.results[Math.floor(Math.random() * response.data.results.length)]];
+        console.log(response)
+        if (!response.data.results.length) {
+          this.joke = undefined
+          this.searching = false
+        } else {
+          this.joke = response.data.results[Math.floor(Math.random() * response.data.results.length)];
+          this.searching = false
+        }
+        console.log(this.joke)
+        console.log(this.searchTerm)
       })
       .catch(error => {
-        console.log(error)
+        alert(error)
       })
+    }
+  },
+  watch: {
+    searchTerm() {
+      this.searching = true
+      console.log(this.searching)
     }
   }
 }
@@ -112,8 +130,8 @@ export default {
         <div id="nav" class="flex flex-col items-center justify-center w-full p-6 space-y-6 md:space-y-0 md:space-x-6 md:flex-row">
           <!-- Search -->
           <div class="flex items-center w-full bg-white rounded-md shadow-xl md:w-1/2">
-            <input class="w-full px-6 py-4 leading-tight text-gray-900 rounded-l-full focus:outline-none" id="search" type="text" placeholder="Search Jokes" v-model="searchTerm"/>
-              <button id="search-joke" class="flex items-center justify-center w-12 h-12 p-2 text-2xl" @click="searchJokes">
+            <input class="w-full px-6 py-4 leading-tight text-gray-900 rounded-full focus:outline-none" id="search" type="text" placeholder="Search Jokes" v-model="searchTerm" />
+              <button v-if="searchTerm" id="search-joke" class="flex items-center justify-center w-12 h-12 p-2 text-2xl" @click="searchJokes">
                 🔍
               </button>
           </div>
@@ -130,9 +148,11 @@ export default {
 
       <!-- Joke -->
       <div class="p-8 mt-10 mb-16 bg-gray-900 rounded-md dark:bg-gray-200 lg:p-12">
-        <div v-if="!jokes" class="flex justify-center text-xl text-gray-900 lg:text-3xl">Loading Joke...</div>
-        <div v-else>
-          <div v-for="joke in jokes" :key="joke.id" id="joke" class="flex flex-col items-center text-xl text-center text-gray-200 dark:text-gray-900 lg:text-3xl">
+        <div v-if="!joke && !searching && searchTerm" class="flex justify-center text-xl text-white dark:text-gray-900 lg:text-3xl">Sorry, there are no <span class="px-2 underline">{{searchTerm}}</span> jokes and that is no joke. Please try your search again.</div>
+        <div v-if="!joke && searching && !searchTerm" class="flex justify-center text-xl text-white dark:text-gray-900 lg:text-3xl">Please enter a search term.</div>
+        <div v-if="!joke && searching && searchTerm" class="flex justify-center text-xl text-white dark:text-gray-900 lg:text-3xl">Please enter a search term.</div>
+        <div v-if="joke">
+          <div id="joke" class="flex flex-col items-center text-xl text-center text-gray-200 dark:text-gray-900 lg:text-3xl">
             <h2>{{joke.joke}}</h2>
           </div>
         </div>
