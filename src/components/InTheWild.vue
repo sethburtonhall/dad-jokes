@@ -19,8 +19,8 @@ export default {
   <!-- In the Wild -->
   <div class="px-6 py-12 bg-gray-900 lg:p-24 dark:bg-gray-200">
     <div class="flex items-center justify-between w-full">
-      <h1 class="text-white dark:text-gray-900 header">Dad Jokes in the Wild (West)! 🤠</h1>
-      <span class="invisible text-white cursor-pointer dark:text-gray-900 lg:visible" @click="toggleFirePit">Warm up by the <span class="text-3xl">🔥</span></span>
+      <h1 class="text-center text-white dark:text-gray-900 header lg:text-left">Dad Jokes in the Wild (West)! 🤠</h1>
+      <span class="hidden text-white cursor-pointer dark:text-gray-900 lg:block" @click="toggleFirePit">Warm up by the <span class="text-3xl">🔥</span></span>
       <div v-if="isFirePit" class="fixed top-0 bottom-0 left-0 right-0 z-10 w-full h-full bg-gray-900 bg-opacity-75 cursor-pointer overlay" @click="toggleFirePit">
         <div class="absolute transform -translate-x-1/2 -translate-y-1/2 select-none fire-gif test top-1/2 left-1/2">
           <img src="../assets/fire.gif" alt="FirePit Gif" />
@@ -48,7 +48,7 @@ export default {
 
   <!-- Hall of Shame -->
   <div class="px-6 py-12 bg-blue-500 lg:p-24">
-    <h1 class="header">Dad Jokes Hall of Shame! 🙄</h1>
+    <h1 class="text-center header lg:text-left">Dad Jokes Hall of Shame! 🙄</h1>
     <div class="flex flex-col justify-between space-y-4 md:flex-row md:space-y-0 md:space-x-4 image-alt">
       <div class="md:w-1/3">
         <img src="../assets/joke1.jpg" alt="Dad Jokes: Hall of Shame" />

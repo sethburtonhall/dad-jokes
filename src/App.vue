@@ -76,7 +76,7 @@ export default {
 <template>
 <div :class="{dark: isDarkMode}" class="bg-gray-900">
   <!-- Marquee -->
-  <div class="relative z-10">
+  <div class="relative z-10 w-full">
     <!-- Scrolling Text-->
     <div v-if="isMarquee" class="fixed flex items-center w-full overflow-hidden text-white bg-gray-900 marquee md:block bg-gradient-to-r from-purple-600 via-pink-600 to-gray-900 flex-nowrap whitespace-nowrap">
         <div :class="{pause: !isMarquee}" class="flex items-center marquee-inner">
@@ -102,7 +102,8 @@ export default {
 
     <!-- Toggle Dark Mode -->
     <div class="fixed right-0 w-auto py-2 text-right cursor-pointer select-none" @click="toggleDarkMode">
-      <span v-if="isDarkMode" class="p-1 pl-24 pr-3 text-4xl bg-gradient-to-l from-gray-900 via-gray-900">🌝</span>
+      <span v-if="isDarkMode && isMarquee" class="p-1 pl-24 pr-3 text-4xl bg-gradient-to-l from-gray-900 via-gray-900">🌝</span>
+      <span v-if="isDarkMode && !isMarquee" class="p-1 pl-24 pr-3 text-4xl">🌝</span>
       <span v-if="!isDarkMode && isMarquee" class="p-1 pl-24 pr-3 text-4xl bg-gradient-to-l from-gray-900 via-gray-900">🌚</span>
       <span v-if="!isDarkMode && !isMarquee" class="p-1 pl-24 pr-2 text-4xl ">🌚</span>
     </div>
@@ -113,12 +114,12 @@ export default {
     <div :class="{'pt-28': isMarquee}" class="flex flex-col px-6 pt-16 lg:px-24">
       <div class="flex flex-col items-center">
         <!-- Heading -->
-        <h1 class="text-5xl text-transparent font-display md:text-7xl lg:text-9xl bg-clip-text bg-gradient-to-t from-pink-500 to-purple-600">
+        <h1 class="text-5xl text-center text-transparent font-display md:text-7xl lg:text-9xl bg-clip-text bg-gradient-to-t from-pink-500 to-purple-600">
           {{heading}}
         </h1>
 
         <!-- SubHeading -->
-        <h3 class="mb-8 text-lg text-center text-gray-900 lg:text-2xl dark:text-white">
+        <h3 class="mb-4 text-lg text-center text-gray-900 lg:mb-8 lg:text-2xl dark:text-white">
           {{subHeading}}
         </h3>
 
@@ -132,7 +133,7 @@ export default {
               </button>
           </div>
 
-          <div>or</div>
+          <div class="text-gray-900 dark:text-white">or</div>
 
           <!-- Random Joke -->
           <button ref="random-joke-button" class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700" @click="getJoke">
@@ -143,7 +144,7 @@ export default {
       </div>
 
       <!-- Joke -->
-      <div class="p-8 mt-10 mb-16 bg-gray-900 rounded-md dark:bg-gray-200 lg:p-12">
+      <div class="p-8 mt-4 mb-10 bg-gray-900 rounded-md lg:mt-10 lg:mb-16 dark:bg-gray-200 lg:p-12">
         <div v-if="!joke && !searching && searchTerm" class="flex justify-center text-xl text-white dark:text-gray-900 lg:text-3xl">Sorry, there are no <span class="px-2 underline">{{searchTerm}}</span> jokes and that is no joke. Please try your search again.</div>
         <div v-if="!joke && searching && !searchTerm" class="flex justify-center text-xl text-white dark:text-gray-900 lg:text-3xl">Please enter a search term.</div>
         <div v-if="!joke && searching && searchTerm" class="flex justify-center text-xl text-white dark:text-gray-900 lg:text-3xl">Please enter a search term.</div>
